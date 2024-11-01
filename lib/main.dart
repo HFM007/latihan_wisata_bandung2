@@ -55,6 +55,7 @@ class BodyScreen extends StatefulWidget {
 class _BodyScreenState extends State<BodyScreen> {
   @override
   Widget build(BuildContext context) {
+    var informationTextStyles = const TextStyle(fontFamily: 'Oswald');
     return SafeArea(
       child: SingleChildScrollView(
         child: Column(
@@ -68,38 +69,47 @@ class _BodyScreenState extends State<BodyScreen> {
                   .cover, // Menyesuaikan gambar agar memenuhi lebar dan tinggi kontainer
             ),
             Container(
-              margin: const EdgeInsets.only(top: 15),
+              margin: const EdgeInsets.only(top: 15, bottom: 15),
               child: const Text(
                 'Farm House Lembang',
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                    fontSize: 20,
+                    fontFamily: 'Oswald',
+                    fontWeight: FontWeight.bold),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Column(
                   children: [
-                    Icon(Icons.calendar_today_outlined),
-                    Text('Open Everyday'),
-                    SizedBox(height: 5),
+                    const Icon(Icons.calendar_today_outlined),
+                    Text(
+                      'Open Everyday',
+                      style: informationTextStyles,
+                    ),
+                    const SizedBox(height: 5),
                   ],
                 ),
                 Column(
                   children: [
-                    Icon(Icons.access_time),
-                    Text('09:00 - 20:00'),
-                    SizedBox(height: 5),
+                    const Icon(Icons.access_time),
+                    Text(
+                      '09:00 - 20:00',
+                      style: informationTextStyles,
+                    ),
+                    const SizedBox(height: 5),
                   ],
                 ),
                 Column(
                   children: [
-                    Icon(Icons.monetization_on_outlined),
-                    Text('Rp 25.000'),
-                    SizedBox(height: 5),
+                    const Icon(Icons.monetization_on_outlined),
+                    Text(
+                      'Rp 25.000',
+                      style: informationTextStyles,
+                    ),
+                    const SizedBox(height: 5),
                   ],
                 ),
               ],
@@ -119,18 +129,27 @@ class _BodyScreenState extends State<BodyScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                          'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                          'https://media-cdn.tripadvisor.com/media/photo-w/13/f0/22/f6/photo3jpg.jpg'),
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(4.0),
-                    child: Image.network(
-                        'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Image.network(
+                          'https://media-cdn.tripadvisor.com/media/photo-m/1280/16/a9/33/43/liburan-di-farmhouse.jpg'),
+                    ),
                   ),
                 ],
               ),
